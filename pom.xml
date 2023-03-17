@@ -55,7 +55,7 @@
 				<archive>
 					<manifest>
 						<addClasspath>true</addClasspath>
-						<mainClass>JavaFXTemplate</mainClass>
+						<mainClass>Game</mainClass>
 					</manifest>
 				</archive>
 			</configuration>
