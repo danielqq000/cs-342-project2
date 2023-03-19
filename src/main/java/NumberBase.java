@@ -17,6 +17,12 @@ public class NumberBase {
 
 	private List<Integer> list = new ArrayList<>();
 
+	// Constructor for exist list
+	public NumberBase (List<Integer> list) {
+		
+		this.list = list;
+	}
+
 	public List<Integer> getList() {
 
 		return list;
@@ -40,7 +46,7 @@ public class NumberBase {
 		return true;
 	}
 
-	public List<Integer> randomList (int n) {
+	public void randomList (int n) {
 
 		int num = 0;
 		Random random = new Random();
@@ -51,8 +57,6 @@ public class NumberBase {
 			if (addNumber(num))
 				i++;
 		}
-
-		return list;
 	}
 
 }
