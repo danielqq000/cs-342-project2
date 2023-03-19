@@ -1,5 +1,10 @@
-Game$1.class
+PlayFX$2.class
+MenuFX.class
+Play.class
+PlayFX$1.class
+PlayFX.class
+GameMenu.class
 NumberBase.class
 Game.class
+GameResult.class
 JavaFXTemplate.class
-GameMenu.class

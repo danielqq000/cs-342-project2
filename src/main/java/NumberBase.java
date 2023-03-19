@@ -17,9 +17,15 @@ public class NumberBase {
 
 	private List<Integer> list = new ArrayList<>();
 
+	// Default Constructor
+	public NumberBase() {
+	
+		this.list = new ArrayList<>();
+	}
 	// Constructor for exist list
 	public NumberBase (List<Integer> list) {
 		
+		this.list = new ArrayList<>();
 		this.list = list;
 	}
 
@@ -33,30 +39,51 @@ public class NumberBase {
 		return list.size();
 	}
 
+	public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+
+		list.forEach(i -> sb.append(i).append(" "));
+		
+		String str = sb.toString();
+		return str;
+	}
+
 	// if number is in the list, return false
 	// add number into the list, then sort it
-	public boolean addNumber(int n) {
+	public void addNumber(int n) {
 
 		if (list.contains(n))
-			return false;
+			return;
 
 		list.add(n);
 		Collections.sort(list);
-	
-		return true;
 	}
+
+	public void removeNumber(int n) {
+
+		if(!list.contains(n))
+			return;
+
+		list.remove(Integer.valueOf(n));
+		Collections.sort(list);
+	}
+	
 
 	public void randomList (int n) {
 
 		int num = 0;
 		Random random = new Random();
 
-		for(int i = 0; i < n;){
-
+		while(list.size() < n){
 			num = random.nextInt(80) + 1;
-			if (addNumber(num))
-				i++;
+			addNumber(num);
 		}
 	}
 
+	public void cleanList() {
+
+		while(list.size() > 0)
+			list.remove(0);
+	}
 }

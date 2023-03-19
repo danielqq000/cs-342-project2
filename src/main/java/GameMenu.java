@@ -3,10 +3,12 @@
 // This file belongs to Project2 for CS342 Spring 2023
 //
 // Description:
+// Functions for Menu. Include rules, odds, and exit.
 //
 
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -59,12 +61,15 @@ public class GameMenu{
 		Alert alert = new Alert(Alert.AlertType.INFORMATION);
 		alert.setTitle("Rules of the Game");
 		alert.setHeaderText("***Rules***");
-		String rulesText = "These are the rules of the game..." +
+		String rulesText = "These are the rules of the game...\n" +
 			"1. Choose number of spots (1, 4, 8, 10)\n" +
 			"2. Select numbers OR auto select\n" +
 			"3. Choose number of draws\n" +
 			"4. Click 'PLAY'\n" +
-			"5. The more you match, the more you win";
+			"5. The more you match, the more you win\n";
+
+		DialogPane dialogPane = alert.getDialogPane();
+		dialogPane.setStyle("-fx-min-width: 800px; -fx-min-height: 500px;");
 		alert.setContentText(rulesText);
 		alert.showAndWait();
 	}
@@ -73,9 +78,9 @@ public class GameMenu{
 
 		Alert alert = new Alert(Alert.AlertType.INFORMATION);
 		alert.setTitle("Odds of the Game");
-		alert.setHeaderText(null);
-		String oddsText = "Here are the odds of winning..." +
-			"1 Number\t1\t1 in 4\n" +
+		alert.setHeaderText("***Odds***");
+		String oddsText = "Here are the odds of winning...\n" +
+			"1 Number\t\t1\t1 in 4\n" +
 			"\t\t\t0\t1 in 3.33\n" +
 			"4 Numbers\t4\t1 in 326\n" +
 			"\t\t\t3\t1 in 23.12\n" +
@@ -91,8 +96,11 @@ public class GameMenu{
 			"\t\t\t7\t1 in 621\n" +
 			"\t\t\t6\t1 in 87.11\n" +
 			"\t\t\t5\t1 in 19.44\n" +
-			"\t\t\t0\t1 in 21.84";
-			alert.setContentText(oddsText);
+			"\t\t\t0\t1 in 21.84\n";
+
+		DialogPane dialogPane = alert.getDialogPane();
+		dialogPane.setStyle("-fx-min-width: 800px; -fx-min-height: 500px;");	
+		alert.setContentText(oddsText);
 		alert.showAndWait();
 	}
 

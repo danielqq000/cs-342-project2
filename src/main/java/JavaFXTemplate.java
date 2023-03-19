@@ -30,7 +30,7 @@ public class JavaFXTemplate {
 	public BorderPane getAnimationPane() {
 		
 
-		 Rectangle rect = new Rectangle (100, 40, 100, 100);
+		 Rectangle rect = new Rectangle (300, 40, 300, 300);
 	     rect.setArcHeight(50);
 	     rect.setArcWidth(50);
 	     rect.setFill(Color.VIOLET);
