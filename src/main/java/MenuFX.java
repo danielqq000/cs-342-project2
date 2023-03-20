@@ -47,7 +47,7 @@ public class MenuFX {
 
         // Create menu bar
         GameMenu menu = new GameMenu();
-        MenuBar menuBar = menu.getMenuBar();
+        MenuBar menuBar = menu.getMenuBar(primaryStage);
 
         // Create JavaFXTemplate animation
         JavaFXTemplate fxAnimation = new JavaFXTemplate();

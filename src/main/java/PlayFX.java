@@ -34,8 +34,8 @@ public class PlayFX {
 		Play play = new Play();
 
 		// Button settings
-		spotComboBox.setPrefSize(60, 30);
-		roundComboBox.setPrefSize(60, 30);
+		spotComboBox.setPrefSize(80, 30);
+		roundComboBox.setPrefSize(80, 30);
 		returnButton.setPrefSize(150, 50);
 		returnButton.setStyle("-fx-font-size: 20px;");
 		continueButton.setPrefSize(150, 50);
@@ -87,7 +87,7 @@ public class PlayFX {
 		String defaultStyle = "-fx-background-color: orange; -fx-text-fill: darkblue; -fx-font-weight: bold";
 
 		// Set the active style of the button
-		String activeStyle = "-fx-background-color: lightgreen; -fx-text-fill: darkblue; -fx-font-weight: bold";
+		String activeStyle = "-fx-background-color: lightblue; -fx-text-fill: darkblue; -fx-font-weight: bold";
 
 		// Set button action
 		EventHandler<ActionEvent> buttonHandler = new EventHandler<>() {
@@ -228,7 +228,7 @@ public class PlayFX {
 		continueButton.setOnAction(e -> {
 			if(checkStatus(user)){
 				Game game = new Game();
-				game.result(primaryStage, user.getList());
+				game.result(primaryStage, user);
 			}
 		});
 	}
@@ -254,7 +254,7 @@ public class PlayFX {
 
 		// Create the menu bar
 		GameMenu menu = new GameMenu();
-		MenuBar menuBar = menu.getMenuBar();
+		MenuBar menuBar = menu.getMenuBar(primaryStage);
 
 		// Create number buttons
 		VBox buttonsBox = playFX.numberButtons(user);

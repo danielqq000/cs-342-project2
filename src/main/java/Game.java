@@ -3,7 +3,7 @@
 // This file belongs to Project2 for CS342 Spring 2023
 //
 // Description:
-//
+// main function. Call others to display.
 
 
 import java.util.List;
@@ -37,8 +37,9 @@ public class Game extends Application {
 		PlayFX.display(primaryStage);
     }
 
-	public void result(Stage primaryStage, List<Integer> list) {
+	public void result(Stage primaryStage, Play user) {
 
+		ResultFX.display(primaryStage, user);
 	}
 
     //Main Function

@@ -1,10 +1,3 @@
-// Play.java
-// author: GuanYu Huang, UID: 677460448
-// This file belongs to Project2 for CS342 Spring 2023
-//
-// Description:
-//
-
 
 import java.util.List;
 

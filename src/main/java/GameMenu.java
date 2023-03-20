@@ -7,6 +7,7 @@
 //
 
 
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Menu;
@@ -14,6 +15,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 
 public class GameMenu{
@@ -45,16 +47,49 @@ public class GameMenu{
 	}
 
 	// public methods
-	public MenuBar getMenuBar(){
+
+	public MenuBar getMenuBar(Stage primaryStage){
 
 		MenuBar menuBar = new MenuBar();
 		Menu menu = new Menu("Menu");
-		menu.getItems().addAll(rulesItem, oddsItem, new SeparatorMenuItem(), exitItem);
+
+		// Create color menu items
+		MenuItem redColorItem = new MenuItem("Red");
+		redColorItem.setOnAction(event -> {
+			// Set the stage background color to red
+			primaryStage.getScene().getRoot().setStyle("-fx-background-color: red;");
+		});
+
+		MenuItem blueColorItem = new MenuItem("Blue");
+		blueColorItem.setOnAction(event -> {
+			// Set the stage background color to blue
+			primaryStage.getScene().getRoot().setStyle("-fx-background-color: blue;");
+		});
+
+		MenuItem greenColorItem = new MenuItem("Green");
+		greenColorItem.setOnAction(event -> {
+			// Set the stage background color to green
+			primaryStage.getScene().getRoot().setStyle("-fx-background-color: green;");
+		});
+		
+		MenuItem grayColorItem = new MenuItem("Gray");
+		grayColorItem.setOnAction(event -> {
+			// Set the stage background color to gray
+			primaryStage.getScene().getRoot().setStyle("-fx-background-color: gray;");
+		});
+		MenuItem whiteColorItem = new MenuItem("White");
+		whiteColorItem.setOnAction(event -> {
+			// Set the stage background color to white
+			primaryStage.getScene().getRoot().setStyle("-fx-background-color: whilte;");
+		});
+
+
+
+		menu.getItems().addAll(rulesItem, oddsItem, new SeparatorMenuItem(), redColorItem, blueColorItem, greenColorItem, grayColorItem, whiteColorItem, new SeparatorMenuItem(), exitItem);
 		menuBar.getMenus().add(menu);
 
 		return menuBar;
 	}
-
 	// private methods
 	private void displayRules(){
 
