@@ -92,7 +92,12 @@ public class PlayFX {
 		// Set button action
 		EventHandler<ActionEvent> buttonHandler = new EventHandler<>() {
 			public void handle(ActionEvent e) {
+				
 				Button button = (Button) e.getSource();
+				
+				// button disabled until user choose a slo
+				if(user.getSlots() == 0)
+					return;
 
 				if (button.getUserData() == null) {
 					// Activate the button
@@ -116,6 +121,11 @@ public class PlayFX {
 				button.setStyle(defaultStyle);
 				button.setOnAction(buttonHandler);
 				buttonGrid.add(button, j, i);
+
+				// button disabled until user choose a slot
+				if(user.getSlots() == 0)
+					button.setDisable(false);
+
 				count ++;
 			}
 		}
